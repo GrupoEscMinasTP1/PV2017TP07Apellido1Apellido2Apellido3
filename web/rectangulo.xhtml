@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p:panel id="pnlRectangulo" header="Rectángulo"
+                 style="width: 400px" footer="Escuela Minas">
+            <h:form id="frmRectangulo">
+                <h:panelGrid id="tblEntradaPunto" columns="4">
+                    <p:outputLabel id="lblPuntoA1" value="A("/>
+                    <p:inputText id="txtXA" size="3"
+                                 value="#{rectanguloFormBean.x1}"/>
+                    <p:inputText id="txtYA" size="3"
+                                 value="#{rectanguloFormBean.y1}"/>
+                    <p:outputLabel id="lblPuntoA2" value=")"/>
+                </h:panelGrid>
+                <h:panelGrid id="tblBaseAltura" columns="2">
+                    <p:outputLabel id="lblAltura" value="Altura"/>
+                    <p:inputText id="txtAltura" size="7"
+                                 value="#{rectanguloFormBean.base}"/>
+                    <p:outputLabel id="lblBase" value="Base"/>
+                    <p:inputText id="txtBase" size="7"
+                                 value="#{rectanguloFormBean.altura}"/>
+
+
+                    <p:commandButton id="btnCalcularRectangulo"
+                                     value="Calcular" action="#{rectanguloFormBean.calcularOtrosPuntos()}"
+                                     update="tblRectanguloResultado"/>
+                </h:panelGrid>   
+                <h:panelGrid id="tblRectanguloResultado" columns="4">
+                    <p:outputLabel id="lblPuntoRA1" value="A("/>
+                    <p:outputLabel id="lblXRA" value="#{rectanguloFormBean.unRectangulo.unPuntoOrigen.x}"/>
+                    <p:outputLabel id="lblYRA" value="#{rectanguloFormBean.unRectangulo.unPuntoOrigen.y}"/>
+                    <p:outputLabel id="lblPuntoRA2" value=")"/>
+
+                    <p:outputLabel id="lblPuntoB1" value="B("/>
+                    <p:outputLabel id="lblXB" value="#{rectanguloFormBean.unRectangulo.unPuntoB.x}"/>
+                    <p:outputLabel id="lblYB" value="#{rectanguloFormBean.unRectangulo.unPuntoB.y}"/>
+                    <p:outputLabel id="lblPuntoB2" value=")"/>
+                    <p:outputLabel id="lblPuntoC1" value="C("/>
+                    <p:outputLabel id="lblXC" value="#{rectanguloFormBean.unRectangulo.unPuntoC.x}"/>
+                    <p:outputLabel id="lblYC" value="#{rectanguloFormBean.unRectangulo.unPuntoC.y}"/>
+                    <p:outputLabel id="lblPuntoC2" value=")"/>
+                    <p:outputLabel id="lblPuntoD1" value="D("/>
+                    <p:outputLabel id="lblXD" value="#{rectanguloFormBean.unRectangulo.unPuntoD.x}"/>
+                    <p:outputLabel id="lblYD" value="#{rectanguloFormBean.unRectangulo.unPuntoD.y}"/>
+                    <p:outputLabel id="lblPuntoD2" value=")"/>
+                </h:panelGrid>
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>
+
